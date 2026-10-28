@@ -40,5 +40,6 @@ dist/
 build/
 coverage/
 .cache/
+.vercel/
 *.tsbuildinfo
 .DS_Store

@@ -56,6 +56,14 @@ npm test
 
 Tests use temporary SQLite databases and a fake address allocator. They do not access or mutate the configured Zingo wallet. No live payment verification is claimed or implemented.
 
+## Hosted judge demo
+
+The live hosted demo is [veilreceipt.baronal.xyz](https://veilreceipt.baronal.xyz/). The two-minute [demo video](https://youtu.be/HnFQurDfm7c) shows the product workflow. The GitHub source repository is [0xBaqi/veilreceipt](https://github.com/0xBaqi/veilreceipt).
+
+`public/demo.html` is a separate static demo that reuses the dashboard styling and creates fictional invoices in the visitor's browser storage. Its conspicuously marked address labels are not valid Zcash addresses. The hosted demo has no Zingo, wallet, SQLite, server API, or blockchain connection; it cannot receive funds or detect or verify a payment. Its invoice status is explicitly simulated and never indicates a confirmed payment. The local Node application and its real Zingo-backed testnet address allocation remain separate and unchanged.
+
+`vercel.json` configures the static output as `public/` and sends `/` to the demo page. The hosted demo does not use wallet or database environment variables. Only the static `public/` output is served; the Node source and local data are outside that output. The demo's saved invoices remain in each visitor's browser and are not shared or synchronized. Payment detection and blockchain confirmation are not implemented in either milestone.
+
 ## Current limitations and risks
 
 - Testnet address generation only; no mainnet, payment detection, chain indexing, webhook, expiry, refunds, or automatic reconciliation.
