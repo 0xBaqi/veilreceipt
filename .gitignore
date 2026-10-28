@@ -1,0 +1,44 @@
+# Runtime database and generated state
+/data/*.sqlite*
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+logs/
+
+# Wallets and private wallet material
+**/*wallet*/
+.zingo-cli/
+*.dat
+*.wallet
+*.wallet-*
+
+# Credentials and secret material
+.env
+.env.*
+!.env.example
+secrets/
+secrets*
+credentials/
+credentials*
+*.secret
+*.token
+*.pem
+*.key
+*.p12
+*.pfx
+*seed*
+*mnemonic*
+*viewing-key*
+*viewkey*
+*.ufvk
+
+# Dependencies and generated artifacts
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+*.tsbuildinfo
+.DS_Store

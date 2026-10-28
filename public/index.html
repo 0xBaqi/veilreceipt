@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f1"><title>VeilReceipt · Shielded payment requests</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/" aria-label="VeilReceipt home"><span class="mark" aria-hidden="true">◈</span><span>veilreceipt</span></a><span class="network">Testnet · Orchard address generation</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">MERCHANT CONSOLE</p><h1>Payment requests,<br>with privacy built in.</h1><p class="lede">Create a request and share a fresh shielded address for each invoice.</p></div><div class="shield" aria-hidden="true">◈</div></section>
+    <section class="workspace">
+      <form id="create-form" class="panel create-panel">
+        <div class="panel-head"><div><p class="eyebrow">NEW REQUEST</p><h2>Create invoice</h2></div><span class="step">01</span></div>
+        <label for="amount">Amount <span>ZEC</span></label><div class="amount-wrap"><input id="amount" name="amountZec" type="text" inputmode="decimal" placeholder="0.00000000" required><span>ZEC</span></div>
+        <label for="description">Description</label><input id="description" name="description" type="text" maxlength="500" placeholder="What is this payment for?" required>
+        <button class="primary" type="submit">Create payment request <span>↗</span></button><p class="form-note">A new Orchard receiving address is assigned to every invoice.</p>
+        <p id="form-error" class="error" role="alert" hidden></p>
+      </form>
+      <section class="panel list-panel"><div class="panel-head"><div><p class="eyebrow">YOUR WORKSPACE</p><h2>Invoices <span id="invoice-count" class="count">0</span></h2></div><button id="refresh" class="icon-button" aria-label="Refresh invoices">↻</button></div><div id="invoice-list" class="invoice-list"><div class="empty"><span>◌</span><p>No invoices yet</p><small>Your payment requests will appear here.</small></div></div></section>
+    </section>
+    <section id="detail" class="panel detail-panel" hidden></section>
+    <footer><span>VeilReceipt</span><span>Payment status requires independent blockchain verification.</span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
